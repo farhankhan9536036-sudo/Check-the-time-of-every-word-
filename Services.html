@@ -1,29 +1,92 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Services - World Translate</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!-- NAVBAR -->
+<style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 25px;
+        background: #ffffff;
+        border-bottom: 1px solid #eaeaea;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        font-family: 'Inter', sans-serif;
+    }
 
-<header>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="languages.html">Languages</a>
-  <a href="blog.html">Blog</a>
-  <a href="contact.html">Contact</a>
-</header>
+    .logo {
+        font-size: 22px;
+        font-weight: 700;
+        color: #4285F4;
+    }
 
-<div class="container">
-  <h1>Our Services</h1>
-  <ul>
-    <li>Text Translation</li>
-    <li>Voice Translation</li>
-    <li>Image Translation (coming soon)</li>
-    <li>Document Translation</li>
-  </ul>
-</div>
+    .menu {
+        display: flex;
+        gap: 20px;
+    }
 
-</body>
-</html>
+    .menu a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 500;
+    }
+
+    .menu a:hover {
+        color: #4285F4;
+    }
+
+    /* Mobile menu button */
+    .menu-btn {
+        display: none;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    /* Mobile dropdown */
+    @media (max-width: 768px) {
+        .menu {
+            display: none;
+            position: absolute;
+            top: 65px;
+            right: 0;
+            background: #fff;
+            width: 100%;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .menu a {
+            padding: 12px 0;
+            font-size: 18px;
+        }
+
+        .menu.show {
+            display: flex;
+        }
+
+        .menu-btn {
+            display: block;
+        }
+    }
+</style>
+
+<nav class="navbar">
+    <div class="logo">World Translate</div>
+
+    <div class="menu" id="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</nav>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
